@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>Form with javascript</title>
+	<script type="text/javascript">
+		function func(){
+			var write_name=document.getElementById('nameId');
+			var write_pass=document.getElementById('passId');
+			var write_number=document.getElementById('numberId');
+			var write_email=document.getElementById('emailId');
+			
+			var name=document.getElementById('username');
+			var pass=document.getElementById('password');
+			var numb=document.getElementById('number');
+			var email=document.getElementById('email');
+			
+			var x=name.value;
+			var y=pass.value;
+			var n=numb.value;
+			var e=email.value;
+			
+			if(x==""||x==null){
+				alert("Enter name!");
+			}
+			else{
+				write_name.innerHTML="Your name is "+name.value;				
+			}
+			if(y==""||y==null){
+				alert("Enter password!");
+			}
+			else{
+				write_pass.innerHTML="Your password is "+pass.value;				
+			}
+			if(n==""||n==null){
+				alert("Enter number!");
+			}
+			else if(n.length>13||n.length<0){
+				alert("number should be 13 digit!");
+			}
+			else{
+				write_number.innerHTML="Your number is "+numb.value;				
+			}
+			if(e==""||e==null){
+				alert("Enter Email!");
+			}
+			else{
+				write_email.innerHTML="Your email is "+email.value;				
+			}
+			
+			
+		}
+	</script>
+</head>
+<body>
+		<p id="nameId"></p>
+		<p id="passId"></p>
+		<p id="numberId"></p>
+		<p id="emailId"></p>
+		<form name="test" >
+			<div>
+				<input type="text" placeholder="Username" id="username"/>
+			</div>
+			<div>
+				<input type="password" placeholder="Password" id="password"/>
+			</div>
+			<div>
+				<input type="number" placeholder="Mobile No." id="number"/>
+			</div>
+			<div>
+				<input type="email" placeholder="Email" id="email"/>
+			</div>
+			<div>
+				<input type="button" value="Done" onclick="func();"  />
+			</div>
+		</form>
+		
+</body>
+</html>
